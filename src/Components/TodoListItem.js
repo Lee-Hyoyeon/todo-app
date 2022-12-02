@@ -5,7 +5,7 @@ import { AiOutlineCheckSquare } from '@react-icons/all-files/ai/AiOutlineCheckSq
 import styled from 'styled-components';
 import './TodoListItem.css';
 import cn from 'classnames';
-
+import { MdRemoveCircleOutline } from 'react-icons/md';
 const TodoListItemContainer = styled.div`
     padding: 1rem;
     display: flex;
@@ -54,18 +54,17 @@ const Remove = styled.div`
 
 const TodoListItem = ({ todo, onRemove, onToggle }) => {
     const { id, text, checked } = todo;
+
     return (
         <TodoListItemContainer>
-            <Checkbox
-                className={cn('checkbox', { checked })}
-                onClick={() => onToggle(id)}
-            >
+            <Checkbox className={cn({ checked })} onClick={() => onToggle(id)}>
                 {checked ? <AiOutlineCheckSquare /> : <BiSquare />}
                 <div className="text">{text}</div>
                 {id}
             </Checkbox>
             <Remove onClick={() => onRemove(id)}>
                 <FcReddit />
+                <MdRemoveCircleOutline />
             </Remove>
         </TodoListItemContainer>
     );

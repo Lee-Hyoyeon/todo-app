@@ -27,6 +27,14 @@ const App = () => {
     //고유값 id
     //ref를 사용하여 변수 담기
     const nextId = useRef(4);
+
+    // function test(text){
+
+    // }
+    // const test = (text) =>{
+
+    // }
+
     const onInsert = useCallback(
         (text) => {
             const todo = {
